@@ -1,0 +1,22 @@
+{
+  "name": "ghost-cities",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jeffrey Shen <jjshen@mit.edu>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^6.1.1",
+    "jquery": "^3.6.0",
+    "bulma": "^0.9.4"
+  }
+}
