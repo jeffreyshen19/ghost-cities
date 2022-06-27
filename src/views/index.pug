@@ -4,13 +4,26 @@ html(lang='en')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    //- meta(name = "description" content = "")      
-    //- meta(name = "author" content = "Jeffrey Shen")
-    //- title
-    //- link(rel="icon" type="image/png" href="/assets/graphics/favicon.png")
-    link(href='bower_components/font-awesome/css/all.min.css', rel='stylesheet', type='text/css')
-    link(href='bower_components/bulma/css/bulma.min.css', rel='stylesheet', type='text/css')
+    meta(name = "description" content = "visualizing vacant housing in american urban areas")      
+    meta(name = "author" content = "Jeffrey Shen")
+    title ghost cities
+    link(href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' )
     link(href='dist/CSS/main.css', rel='stylesheet', type='text/css')
   body 
-    script(src = "/bower_components/jquery/dist/jquery.min.js")
+    #text 
+      .centered
+        h1 ghost cities
+        p.subtitle visualizing vacant housing in american urban areas
+      .content
+        p <span class = "heading">Jeffrey Shen, 2022</span>  On any given day in the United States, <a href = "https://endhomelessness.org/homelessness-in-america/homelessness-statistics/state-of-homelessness-2021/">half a million people</a>—a <a href = "https://www.childrensdefense.org/policy/resources/soac-2020-housing/">fifth</a> of whom are children—are homeless, with millions more struggling to pay ever-increasing rents. Yet, in cities across the U.S., houses remain vacant: there are nearly <a href = "https://www.self.inc/info/empty-homes/">17 million</a> empty units nationwide, or 33 empty properties for each homeless person. In Los Angeles, for instance, over <a href = "https://www.acceinstitute.org/thevacancyreport">half</a> of the vacant units are withheld from the housing markets entirely, reflecting a practice of speculation which treats housing as an investment and not as, well, housing. This pattern is reflected in other major cities, such as New York, where thousands of units are off the market and used as <a href = "https://www.bloomberg.com/news/articles/2022-05-18/airbnbs-outnumber-new-york-city-apartments-in-hot-housing-market">AirBnB rentals</a>, or Boston, where luxury housing sits mostly <a href = "https://ips-dc.org/wp-content/uploads/2018/09/ToweringExcessReport-Sept10.pdf">empty</a>. 
+        p A ghost city, historically, is an abandoned settlement, but in recent years the term has been used to refer to underpopulated real-estate developments. However, the term is rarely applied to the United States, where it would be an apt description of the scale of vacancies in most major American cities. 
+        p The goal behind this project is two-fold. First, the map provides highly granular data on vacant housing at the Census block group level for urban areas in all 50 states as well as Puerto Rico. This data can be used by organizers, journalists, or ordinary citizens to understand the problem of vacant housing in their local area or on the national and state level. Second, the map visualizes vacant units as 3D extrusions visually reminiscent of skyscrapers. Though the construction of tall buildings and luxury towers is often conflated with progress and modernity, this choice of visualization reveals a different “skyline”: one where empty or abandoned buildings rise over downtowns, hurricane devastated areas, and tourist destinations. The hope of this design is to present another perspective on the American city. 
+        p So, feel free to explore the map: you can zoom, rotate, pan, and tilt the screen, and also click on individual block groups to see detailed data. The height of block groups is proportional to how many vacant housing units they contain, and the darker the color indicates a higher percentage of vacant units. 
+        hr 
+        i All data from the 2020 Decennial Census. Displayed block groups are those within a Census-designated urban area.
+    #map
+      #overlay
+      #return 
+        button(onClick = "returnToTop()") Return to text
+    script(src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js')
     script(src = "/dist/JS/main.js")
